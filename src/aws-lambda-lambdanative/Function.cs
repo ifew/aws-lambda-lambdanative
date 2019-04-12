@@ -11,6 +11,9 @@ namespace aws_lambda_function
 {
     public class Function
     {
+        public static void Main(string[] args)
+        {
+        }
         public string FunctionHandler(string inputName, ILambdaContext context)
         {
             respondModel respond = new respondModel {
