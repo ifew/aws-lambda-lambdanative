@@ -42,3 +42,10 @@ dotnet add package Microsoft.DotNet.ILCompiler -v 1.0.0-alpha-*
   <OutputType>Exe</OutputType>
 </PropertyGroup>
 ```
+
+### 5. Build exe file with docker linix environment
+
+```bash
+docker build -t lambdanative .
+docker run --rm lambdanative -v /Users/chitpong/Sourcecode/aws-lambda-lambdanative/src/aws-lambda-lambdanative/output:/output -e ASPNETCORE_ENVIRONMENT=Development lambdanative
+```
