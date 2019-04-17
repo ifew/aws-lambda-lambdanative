@@ -7,23 +7,22 @@ using Amazon.Lambda.Core;
 using Amazon.Lambda.Serialization.Json;
 
 //[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-namespace aws_lambda_function
+namespace LambdaNative.Example
 {
-    public class Function
+    public class Handler : IHandler<Request, Response>
     {
-        public ILambdaSerializer Serializer => new Amazon.Lambda.Serialization.Json.JsonSerializer();
-        public static void Main()
+        public ILambdaSerializer Serializer => new JsonSerializer();
+        
+        public Response Handle(Request inputName, ILambdaContext context)
         {
-        }
-        public respondModel FunctionHandler(string inputName, ILambdaContext context)
-        {
-            respondModel respond = new respondModel {
-                http_code = "200",
-                http_message = "Success",
-                body = new HelloModel {
-                    message = Hello(inputName)
-                }
-            };
+            // respondModel respond = new respondModel {
+            //     http_code = "200",
+            //     http_message = "Success",
+            //     body = new HelloModel {
+            //         message = Hello(inputName)
+            //     }
+            // };
+            Response respond = new Response("Hi, " + inputName, inputName);
 
             return respond;
         }
