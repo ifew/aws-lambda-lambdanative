@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Amazon.Lambda.Core;
-using Newtonsoft.Json;
+using Amazon.Lambda.Serialization.Json;
 
 //[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 namespace aws_lambda_function
@@ -13,7 +13,7 @@ namespace aws_lambda_function
     {
         public ILambdaSerializer Serializer => new Amazon.Lambda.Serialization.Json.JsonSerializer();
         
-        public string FunctionHandler(string inputName, ILambdaContext context)
+        public respondModel FunctionHandler(string inputName, ILambdaContext context)
         {
             respondModel respond = new respondModel {
                 http_code = "200",
@@ -23,7 +23,7 @@ namespace aws_lambda_function
                 }
             };
 
-            return JsonConvert.SerializeObject(respond);
+            return respond;
         }
 
         public string Hello(string name)
