@@ -1,5 +1,4 @@
-﻿
-namespace LambdaNative.Example
+﻿namespace LambdaNative.Example
 {
     public static class EntryPoint
     {
