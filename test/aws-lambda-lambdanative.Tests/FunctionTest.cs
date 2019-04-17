@@ -7,7 +7,7 @@ using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 
-using aws_lambda_function;
+using LambdaNative;
 using Newtonsoft.Json;
 
 namespace aws_lambda_function.Tests
@@ -19,12 +19,13 @@ namespace aws_lambda_function.Tests
         {
             string expected = "{\"http_code\":\"200\",\"http_message\":\"Success\",\"body\":{\"message\":\"Hello, iFew\"}}";
 
-
-            var function = new Function();
+            var function = new Handler();
             var context = new TestLambdaContext();
-            string hello_result = function.FunctionHandler("iFew", context);
+            respondModel hello_result = function.Handle("iFew", context);
 
-            Assert.Equal(expected, hello_result);
+            string result = JsonConvert.SerializeObject(hello_result);
+
+            Assert.Equal(expected, result);
         }
 
         [Fact]
@@ -33,7 +34,7 @@ namespace aws_lambda_function.Tests
             string input = "iFew";
             string expected = "Hello, iFew";
 
-            var function = new Function();
+            var function = new Handler();
             string hello_result = function.Hello(input);
 
             Assert.Equal(expected, hello_result);
