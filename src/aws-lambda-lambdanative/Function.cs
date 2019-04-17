@@ -9,7 +9,7 @@ namespace LambdaNative.Example
 
         public respondModel Handle(HelloModel request, ILambdaContext context)
         {
-            return new respondModel {};
+            return new respondModel { body = "Hello iFew" };
         }
     }
 }
