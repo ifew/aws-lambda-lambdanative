@@ -1,7 +1,7 @@
 using Amazon.Lambda.Core;
 using Amazon.Lambda.Serialization.Json;
 
-namespace LambdaNative.Example
+namespace LambdaNative
 {
     public class Handler : IHandler<HelloModel, respondModel>
     {
