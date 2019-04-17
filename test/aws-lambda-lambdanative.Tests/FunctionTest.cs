@@ -19,7 +19,7 @@ namespace aws_lambda_function.Tests
         {
             string expected = "{\"http_code\":\"200\",\"http_message\":\"Success\",\"body\":{\"message\":\"Hello, iFew\"}}";
 
-            var function = new Handler();
+            var function = new Function();
             var context = new TestLambdaContext();
             respondModel hello_result = function.Handle("iFew", context);
 
@@ -34,7 +34,7 @@ namespace aws_lambda_function.Tests
             string input = "iFew";
             string expected = "Hello, iFew";
 
-            var function = new Handler();
+            var function = new Function();
             string hello_result = function.Hello(input);
 
             Assert.Equal(expected, hello_result);

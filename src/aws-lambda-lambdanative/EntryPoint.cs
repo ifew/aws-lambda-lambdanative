@@ -4,7 +4,7 @@
     {
         public static void Main()
         {
-            LambdaNative.Run<Handler, string, respondModel>();
+            LambdaNative.Run<Function, string, respondModel>();
         }
     }
 }

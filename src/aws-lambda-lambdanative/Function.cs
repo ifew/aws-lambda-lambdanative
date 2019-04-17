@@ -3,7 +3,7 @@ using Amazon.Lambda.Serialization.Json;
 
 namespace LambdaNative
 {
-    public class Handler : IHandler<string, respondModel>
+    public class Function : IHandler<string, respondModel>
     {
         public ILambdaSerializer Serializer => new JsonSerializer();
 
