@@ -12,11 +12,6 @@ namespace aws_lambda_function
     public class Function
     {
         public ILambdaSerializer Serializer => new Amazon.Lambda.Serialization.Json.JsonSerializer();
-
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("return from main");
-        }
         
         public string FunctionHandler(string inputName, ILambdaContext context)
         {
