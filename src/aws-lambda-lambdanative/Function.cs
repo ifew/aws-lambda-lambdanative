@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 using Amazon.Lambda.Core;
 using Newtonsoft.Json;
 
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+//[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 namespace aws_lambda_function
 {
     public class Function
     {
+        public ILambdaSerializer Serializer => new Amazon.Lambda.Serialization.Json.JsonSerializer();
+
         public static void Main(string[] args)
         {
+            Console.WriteLine("return from main");
         }
+        
         public string FunctionHandler(string inputName, ILambdaContext context)
         {
             respondModel respond = new respondModel {
