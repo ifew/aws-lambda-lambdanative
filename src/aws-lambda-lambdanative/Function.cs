@@ -12,7 +12,9 @@ namespace aws_lambda_function
     public class Function
     {
         public ILambdaSerializer Serializer => new Amazon.Lambda.Serialization.Json.JsonSerializer();
-        
+        public static void Main()
+        {
+        }
         public respondModel FunctionHandler(string inputName, ILambdaContext context)
         {
             respondModel respond = new respondModel {
