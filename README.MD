@@ -9,17 +9,34 @@ Example for optimize cold start with Lambda Native
 
 ## Step to setup
 
+### Run Unit test
+
+```bash
+cd test/aws-lambda-lambdanative.Tests
+dotnet test
+```
+
 ### Build file and packing to output/package.zip
 
 ```bash
 sh build.sh
 ```
 
-### upload to aws s3
+### Upload to aws s3
 
 ```bash
 cd output
 aws s3 cp package.zip s3://backend-layer [--profile AWS-PROFILE-NAME]
 ```
 
-### go to lambda page and upload via s3 url
+### Go to lambda page and choose upload via s3 url, runtime: custom, handler: up to you
+
+![Setting](lambdabative-lambdapage-setting.png)
+
+### Try to test
+
+![Testing](lambdabative-lambdapage-test.png)
+
+### Test Result
+
+![Testing](lambdabative-lambdapage-test-result.png)
