@@ -1,7 +1,8 @@
 using Amazon.Lambda.Core;
 using Amazon.Lambda.Serialization.Json;
+using LambdaNative;
 
-namespace LambdaNative
+namespace aws_lambda_lambdanative
 {
     public class Function : IHandler<string, respondModel>
     {

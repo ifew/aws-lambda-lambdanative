@@ -7,10 +7,10 @@ using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 
-using LambdaNative;
+using aws_lambda_lambdanative;
 using Newtonsoft.Json;
 
-namespace aws_lambda_function.Tests
+namespace aws_lambda_lambdanative.Tests
 {
     public class FunctionTest
     {

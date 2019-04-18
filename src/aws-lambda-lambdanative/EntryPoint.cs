@@ -1,4 +1,6 @@
-﻿namespace LambdaNative
+﻿using aws_lambda_lambdanative;
+
+namespace LambdaNative
 {
     public static class EntryPoint
     {
