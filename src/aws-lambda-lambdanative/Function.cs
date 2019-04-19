@@ -21,7 +21,7 @@ namespace aws_lambda_lambdanative
 
         public string Hello(string name)
         {
-            return "Hi, " + name;
+            return "Hello, " + name;
         }
     }
 }
