@@ -5,7 +5,7 @@ Example for LambdaNative
 ## Dependency
 
 - https://github.com/dotnet/corert
-- https://github.com/ifew/lambda-native/
+- https://github.com/zaccharles/lambda-native
 
 ## Step to build and deploy
 
