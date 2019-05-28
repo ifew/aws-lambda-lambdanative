@@ -1,11 +1,11 @@
-# AWS Lambda Net Core 2 by using CoreRT
+# Example AWS Lambda C# .NET Core 3 (and 2.2) by LambdaNative and CoreRT for optimize cold start
 
-Example for optimize cold start with Lambda Native
+Example for LambdaNative
 
 ## Dependency
 
 - https://github.com/dotnet/corert
-- https://github.com/ifew/lambda-native/
+- https://github.com/zaccharles/lambda-native
 
 ## Step to build and deploy
 
